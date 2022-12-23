@@ -146,7 +146,7 @@
         <script>
             Telegram.WebApp.ready();
             keys = ['username','password','email','studentNumber','phoneNumber']
-            values = {'username':'','password':'','email':'','studentNumber':'','phoneNumber':'','method':'signup'}
+            values = {'username':'','password':'','email':'','studentNumber':'','phoneNumber':'','is_login':"0",'method':'signup'}
             function send_data(){
                 keys.forEach(element => {
                     values[element] = document.getElementById(element).value;

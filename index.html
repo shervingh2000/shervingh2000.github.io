@@ -100,7 +100,7 @@
         
         <section class="container">
             <h1>SignUp</h1>
-            <form action="" method="post" class="Form">
+            <form  method="get" class="Form">
             
                 
                 <div>
@@ -151,8 +151,9 @@
                     values[element] = document.getElementById(element).value;
                 });
                 console.log(values)
-            Telegram.WebApp.sendData(JSON.stringify(values));
-            Telegram.WebApp.close();
+            //     console.log(values)
+            // Telegram.WebApp.sendData(JSON.stringify(values));
+            // Telegram.WebApp.close();
             }
         </script>
 

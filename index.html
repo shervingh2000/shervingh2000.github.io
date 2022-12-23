@@ -140,6 +140,7 @@
 
             </form>
 
+
         </section>
 
         <script>
@@ -150,10 +151,8 @@
                 keys.forEach(element => {
                     values[element] = document.getElementById(element).value;
                 });
-                console.log(values)
-            //     console.log(values)
-            // Telegram.WebApp.sendData(JSON.stringify(values));
-            // Telegram.WebApp.close();
+            Telegram.WebApp.sendData(JSON.stringify(values));
+            Telegram.WebApp.close();
             }
         </script>
 

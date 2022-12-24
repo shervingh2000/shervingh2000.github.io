@@ -11,7 +11,7 @@
 
         body{
             background:linear-gradient(120deg,#2980b9,#ad4444);
-            height: 115vh;
+            height: 130vh;
             font-family: sans-serif;
         }
 
@@ -157,9 +157,14 @@
             keys = ['username','password','email','studentNumber','phoneNumber']
             values = {'username':'','password':'','email':'','studentNumber':'','phoneNumber':'','is_login':"0",'method':'signup'}
             function send_data(){
-                keys.forEach(element => {
-                    values[element] = document.getElementById(element).value;
-                });
+                for (var key in keys) {
+                    if(document.getElementById(keys[key]).value == ""){
+                            alert(document.getElementById(keys[key]).id.toLowerCase()+" is empty");   
+                            return 
+                        }
+                    else
+                    values[keys[key]] = document.getElementById(keys[key]).value;
+                }
             Telegram.WebApp.sendData(JSON.stringify(values));
             Telegram.WebApp.close();
             }

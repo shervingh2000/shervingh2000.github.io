@@ -10,8 +10,8 @@
     <style>
 
         body{
-            background:linear-gradient(120deg,#2980b9,#8e44ad);
-            height: 130vh;
+            background:linear-gradient(120deg,#2980b9,#ad4444);
+            height: 110vh;
             font-family: sans-serif;
         }
 
@@ -21,7 +21,7 @@
             left: 50%;
             transform: translate(-50%,-50%);
             width: 350px;
-            background:linear-gradient(70deg,#ffccaf,#c7a4f8);
+            background:linear-gradient(70deg,#ffccaf,#f8c4a4);
             border-radius: 18px;
         }
         form{
@@ -58,7 +58,7 @@
         form div input{
             position: absolute;
             padding: 0px 5px;
-            font-size: 20px;
+            font-size: 18px;
             top: -50%;
             transform: translateY(-80%);
             background-color: transparent;
@@ -82,7 +82,7 @@
             width: 100%;
             height: 35px;
             border-radius: 50px;
-            background-color: #0f6197;
+            background:linear-gradient(120deg,#2980b9,#ad4444);
             color: aliceblue;
             font-weight: 600;
             font-size: 19px;
@@ -96,7 +96,7 @@
 
     </style>
 
-    <body style="margin: 0px; padding: 0px; box-sizing: border-box;">
+    <body style="margin: 0px; padding: 0px; box-sizing: border-box;" onclick="hide_keyboard()">
         
         <section class="container">
             <h1>SignUp</h1>
@@ -105,31 +105,31 @@
                 
                 <div>
                     
-                    <input type="text" id="username" required>
+                    <input type="text" id="username" autocomplete="off" required>
                     <label class="username">Username</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                     
                 </div>
                 <div>
-                    <input type="password" id="password" required>
+                    <input type="password" id="password" autocomplete="off" required>
                     <label class="password">Password</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                 </div>
                 <div>
                     
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" autocomplete="off" required>
                     <label class="email">Email Address</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                     
                 </div>
                 <div>
-                    <input type="text" id="studentNumber" required>
+                    <input type="text" id="studentNumber"autocomplete="off" required>
                     <label class="StudentNumber">Student Number</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                 </div>
 
                 <div>
-                    <input type="tel" id="phoneNumber" required>
+                    <input type="tel" id="phoneNumber"autocomplete="off" required>
                     <label class="Phone">Phone Number</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                 </div>
@@ -142,6 +142,15 @@
 
 
         </section>
+
+        <script>
+            function hide_keyboard(){
+                if(document.activeElement !=document.getElementById("username")||
+                 document.activeElement !=document.getElementById("password"))
+                document.getElementById("username").blur
+                document.getElementById("password").blur
+            }
+        </script>
 
         <script>
             Telegram.WebApp.ready();

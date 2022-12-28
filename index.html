@@ -10,7 +10,9 @@
     <style>
 
         body{
-            background:linear-gradient(120deg,#2980b9,#ad4444);
+            background-image: url("spaghetti-g5ef10c8eb_1920.jpg");
+            background-size:cover;
+            background-repeat: no-repeat;
             height: 100vh;
             font-family: sans-serif;
         }
@@ -21,7 +23,8 @@
             left: 50%;
             transform: translate(-50%,-50%);
             width: 350px;
-            background:bisque;
+            background:rgb(219, 180, 152);
+            opacity: 0.9;
             border-radius: 18px;
         }
         form{
@@ -82,7 +85,7 @@
             width: 100%;
             height: 35px;
             border-radius: 50px;
-            background:linear-gradient(120deg,#2980b9,#ad4444);
+            background-color: rgb(32, 105, 162);
             color: aliceblue;
             font-weight: 600;
             font-size: 19px;
@@ -100,38 +103,38 @@
 
     <body style="margin: 0px; padding: 0px; box-sizing: border-box;" onclick="hide_keyboard()">
         
-        <section class="container">
+        <section class="container" id="container">
             <h1>SignUp</h1>
             <form  method="get" class="Form">
             
                 
                 <div>
                     
-                    <input type="text" id="username" autocomplete="off" required>
+                    <input type="text" id="username" autocomplete="off" onfocus="responsiveInput()" onblur="resetInput()" required>
                     <label class="username">Username</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                     
                 </div>
                 <div>
-                    <input type="password" id="password" autocomplete="off" required>
+                    <input type="password" id="password" autocomplete="off" onfocus="responsiveInput()" onblur="resetInput()" required>
                     <label class="password">Password</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                 </div>
                 <div>
                     
-                    <input type="email" id="email" autocomplete="off" required>
+                    <input type="email" id="email" autocomplete="off" onfocus="responsiveInput()" onblur="resetInput()" required>
                     <label class="email">Email Address</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                     
                 </div>
                 <div>
-                    <input type="text" id="studentNumber"autocomplete="off" required>
+                    <input type="text" id="studentNumber"autocomplete="off" onfocus="responsiveInput()" onblur="resetInput()" required>
                     <label class="StudentNumber">Student Number</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                 </div>
 
                 <div>
-                    <input type="tel" id="phoneNumber"autocomplete="off" required>
+                    <input type="tel" id="phoneNumber"autocomplete="off" onfocus="responsiveInput()" onblur="resetInput()" required>
                     <label class="Phone">Phone Number</label>
                     <span style="width: 100%;height: 2px;background-color: rgb(2, 94, 155); z-index: 1;position: absolute;"></span>
                 </div>
@@ -151,6 +154,18 @@
                  document.activeElement !=document.getElementById("password"))
                 document.getElementById("username").blur
                 document.getElementById("password").blur
+            }
+        </script>
+
+        <script>
+            function responsiveInput(){
+                document.getElementById('container').style.transition='0.4s'
+                document.getElementById('container').style.top = '47%'
+            }
+
+            function resetInput(){
+                document.getElementById('container').style.transition='0.4s'
+                document.getElementById('container').style.top = "50%"
             }
         </script>
 
